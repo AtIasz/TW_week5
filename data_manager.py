@@ -1,6 +1,6 @@
 import random
 
-def get_data_from_file(filename="students_data.csv"):
+def get_data_from_file(filename="students/students_data.csv"):
     data = []
     with open(filename) as r:
         line = r.readline()
@@ -56,7 +56,7 @@ def ID_gen():
             continue
     return generated 
  
-def write_data_to_file(filename="students_data.csv"):
+def write_data_to_file(filename="students/students_data.csv"):
     type_of_data = ["Name","Age","Active"]
     lego=get_data_from_file()
     table = []
@@ -83,12 +83,3 @@ def write_table_to_file(file_name, table, mode='a'):
         for student in table:
             row = ','.join(student)
             f.write(row + '\n')
-
-
-def get_table_from_file(file_name):
-
-    with open(file_name, 'r') as f:
-        lines = f.readlines()
-    table = [element.replace('\n', '').split(',') for element in lines]
-    return table
-    

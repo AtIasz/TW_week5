@@ -27,11 +27,13 @@ def get_inputs(list_labels, title):
     return user_inputs
 
 
-#def print_table(table):
+def get_single_input(message_to_user):
     
+    user_input = input(message_to_user)
     
+    return user_input
+
+def print_table(table, title_list):
 
 
-
-
-
+    pass
