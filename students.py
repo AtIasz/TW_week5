@@ -38,3 +38,21 @@ def create_student(table):
 
 
 
+
+
+
+
+
+
+def delete_student(table, id):
+    about_to_be_deleted = None
+    ID = 0
+    for row in table:
+        if row[ID] == id:
+            about_to_be_deleted = row
+    if about_to_be_deleted is None:
+        ui.print_error_message("Wrong input! Please try again!")
+    else:
+        table.remove(about_to_be_deleted)
+
+    return table
