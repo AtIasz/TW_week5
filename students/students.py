@@ -21,7 +21,7 @@ def start_module():
 
 def show_table(table):
 
-   #ui.print
+   ui.print_table(table)
 
 
 def create_student(table):
@@ -57,7 +57,7 @@ def activate_deactivate_student(table, id):
     ACTIVE_DEACTIVE = 3
 
     for student in table:
-        
+        pass
 
 
 

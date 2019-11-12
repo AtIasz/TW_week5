@@ -25,6 +25,9 @@ def get_inputs(list_labels, title):
     return user_inputs
 
 
+def print_table(table):
+
+    
 
 
 
