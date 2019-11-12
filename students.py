@@ -56,3 +56,7 @@ def delete_student(table, id):
         table.remove(about_to_be_deleted)
 
     return table
+
+
+def update_student(table, id):
+    pass
