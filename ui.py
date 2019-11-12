@@ -1,11 +1,11 @@
-def print_menu(title, options, exit_message):
+def print_menu(title, options):
     print(title)
     
     for i in range(len(options)):
         print('(' + str(i+1) + ')', end='')
         print(options[i])
         
-    print("(0) Exit")
+    print("(0)Exit")
 
 def print_something_else(arg):
     pass
@@ -27,9 +27,11 @@ def get_inputs(list_labels, title):
     return user_inputs
 
 
-def print_table(table, title_list):
+#def print_table(table):
+    
+    
 
-    print(title_list)
-    for item in table:
-        print(item)
+
+
+
 

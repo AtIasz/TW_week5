@@ -1,8 +1,8 @@
 import ui
 import sys
-from students import students
+import students
 import data_manager
-from company import company
+import company
 from position import position
 from application import application
 
@@ -35,7 +35,8 @@ def choose():
         raise KeyError("There is no such option!")
 
 def handle_menu():
-    
+    options=["Students module",
+             "Company module"]
     ui.print_menu('Main Menu', options)
 
 
