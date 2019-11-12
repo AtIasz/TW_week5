@@ -14,7 +14,7 @@ def get_data_from_file(filename="students_data.csv"):
         for j in range(len(data[i])-1):
             line+=data[i][j]
         noslashn.append(line.split(","))
-    return noslashn 
+    return noslashn
         
 
 def write_data_to_file(filename="students_data.csv"):
