@@ -26,6 +26,16 @@ def create_student(table):
     return table
 
 
+def read_student(ID="!hZK87%u"):
+    '''
+    Users can show the details of existing students by entering their ID.
+    All “Application” of student shows up here.
+    '''
+    data=data_manager.get_data_from_file()
+    for i in range(len(data)):
+        if data[i][0]==ID:
+            return data[i]
+    raise ValueError
 
 
 
