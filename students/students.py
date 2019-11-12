@@ -74,12 +74,20 @@ def read_student(table, id):
     raise ValueError
 
 def activate_deactivate_student(table, id):
-    
+    ID = 0
     ACTIVE_DEACTIVE = 3
 
-    for student in table:
-        pass
+    user_input = ui.get_single_input('Would you like to Activate (A) or Deactivate (D) the student?\n')
 
+    for student in table:
+        if student[ID] == id:
+            if user_input == 'a' or user_input == 'A':
+                student[ACTIVE_DEACTIVE] = 1
+            elif user_input == 'd' or user_input == 'D':
+                student[ACTIVE_DEACTIVE] = 0
+            else:
+                raise ValueError('Invalid input!')
+    return table
 
 
 
