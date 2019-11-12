@@ -1,10 +1,10 @@
 import common
 import ui
+import data_manager
 
 title = 'Students'
 
-list_labels = ['ID',
-                'name',
+list_labels = ['name',
                 'age',
                 'active']
 
@@ -69,4 +69,20 @@ def delete_student(table, id):
 
 
 def update_student(table, id):
-    pass
+    
+    ID = 0
+    user_input = ui.get_inputs(list_labels, title)
+
+    for n, row in enumerate(table):
+        if id == row[ID]:
+            user_input.insert(0, id)
+            change = user_input
+            table[n] = change
+
+    table = data_manager.write_table_to_file(table)
+
+    return table
+
+
+
+
