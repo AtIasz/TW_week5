@@ -78,5 +78,5 @@ def write_table_to_file(file_name, table, mode='a'):
 
     with open(file_name, mode) as f:
         for student in table:
-            row = ','.join(record)
+            row = ','.join(student)
             f.write(row + '\n')
