@@ -26,6 +26,24 @@ class StudentTester(unittest.TestCase):
         check_forbidden_functions(self, 'students/students.py')
 
 
+class ApplicationTester(unittest.TestCase):
+
+    def test_forbidden_functions(self):
+        check_forbidden_functions(self, 'application/application.py')
+
+
+class CompanyTester(unittest.TestCase):
+
+    def test_forbidden_functions(self):
+        check_forbidden_functions(self, 'company/company.py')
+
+
+class PositionTester(unittest.TestCase):
+
+    def test_forbidden_functions(self):
+        check_forbidden_functions(self, 'position/position.py')
+
+        
 def main():
     unittest.main(verbosity=2)
 

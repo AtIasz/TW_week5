@@ -1,4 +1,4 @@
-def print_menu(title, options):
+def print_menu(title, options, exit_message):
     print(title)
     
     for i in range(len(options)):
@@ -27,11 +27,9 @@ def get_inputs(list_labels, title):
     return user_inputs
 
 
-def print_table(table):
+def print_table(table, title_list):
 
-    
-
-
-
-
+    print(title_list)
+    for item in table:
+        print(item)
 
