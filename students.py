@@ -37,6 +37,10 @@ def read_student(ID="!hZK87%u"):
             return data[i]
     raise ValueError
 
+def activate_deactivate_student(ID="!hZK87%u"):
+    data=data_manager.get_data_from_file()
+    
+
 
 
 

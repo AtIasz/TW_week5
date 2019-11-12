@@ -15,7 +15,7 @@ def print_error_message(message):
     print(message)
 
 
-def get_inputs(list_labels, title)
+def get_inputs(list_labels, title):
 
     print(title)
     user_inputs = []

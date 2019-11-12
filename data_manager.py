@@ -16,14 +16,7 @@ def get_data_from_file(filename="students_data.csv"):
             line += data[i][j]
         noslashn.append(line.split(","))
     return noslashn
-        
-def write_data_to_file(filename="students_data.csv"):
-    type_of_data = ["Name","Age","Active"]
-    lego=get_data_from_file()
-    table = []
-    for i in range(len(lego)):
-        table.append(lego[i][0])
-    list_of_data = []
+def ID_gen():
     generated = ''
 
     up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
@@ -61,6 +54,16 @@ def write_data_to_file(filename="students_data.csv"):
             break
         else:
             continue
+    return generated 
+ 
+def write_data_to_file(filename="students_data.csv"):
+    type_of_data = ["Name","Age","Active"]
+    lego=get_data_from_file()
+    table = []
+    for i in range(len(lego)):
+        table.append(lego[i][0])
+    list_of_data = []
+    generated=ID_gen()
     list_of_data.append(generated)
     for i in range(len(type_of_data)):
         list_of_data.append(input((type_of_data[i]+":")))
