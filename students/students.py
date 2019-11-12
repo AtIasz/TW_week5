@@ -4,9 +4,9 @@ import data_manager
 
 title = '\nStudents'
 
-list_labels = ['name',
-                'age',
-                'active']
+list_labels = ['Name: ',
+                'Age: ',
+                'Active (1) = Yes, (0) = No: ']
 
 options = ['Create Student',
                 'Read Student',
