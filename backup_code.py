@@ -1,18 +1,9 @@
-import ui
-import sys
-from students import students
-import data_manager
-from company import company
-from position import position
-from application import application
-
-def choose():
-    table = data_manager.get_data_from_file()
+table = data_manager.get_data_from_file()
     user_input = int(input("Please type a number!\n"))
     if user_input == 1:
-        students.start_module()
+        students.create_student(table)
     elif user_input == 2:
-        company.start_module()
+        pass
     elif user_input == 3:
         pass
     elif user_input == 4:
@@ -34,38 +25,8 @@ def choose():
     else:
         raise KeyError("There is no such option!")
 
-def handle_menu():
+
+
+
+
     
-    ui.print_menu('Main Menu', options)
-
-
-def main():
-    while True:
-        handle_menu()
-        try:
-            choose()
-        except KeyError:
-            ui.print_error_message('Wrong input! Please try again!')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    main()

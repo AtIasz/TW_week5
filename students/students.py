@@ -8,6 +8,21 @@ list_labels = ['name',
                 'age',
                 'active']
 
+options = ['Create Student',
+                'Read Student',
+                'Read Students',
+                'Update Student',
+                'Activate/Deactivate Student',
+                'Delete Student']
+
+def start_module():
+
+    ui.print_menu(title, options)
+
+def show_table(table):
+
+   #ui.print
+
 
 def create_student(table):
     '''
