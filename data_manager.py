@@ -64,9 +64,13 @@ def write_data_to_file(filename="students_data.csv"):
     list_of_data.append(generated)
     for i in range(len(type_of_data)):
         list_of_data.append(input((type_of_data[i]+":")))
+    print(",".join(list_of_data))
+    
+    
+    
     text=open(filename,"a")
-    text.write(str(list_of_data).strip("[]"))
+    text.write(",".join(list_of_data))
     text.write("\n")
     text.close()
-
+    
 write_data_to_file()
