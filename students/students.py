@@ -2,7 +2,7 @@ import common
 import ui
 import data_manager
 
-title = 'Students'
+title = '\nStudents'
 
 list_labels = ['name',
                 'age',
@@ -15,11 +15,31 @@ options = ['Create Student',
                 'Activate/Deactivate Student',
                 'Delete Student',
                 'Back to Main Menu']
+table = data_manager.get_table_from_file('students/students_data.csv')
+
 
 def start_module():
 
-    ui.print_menu(title, options)
-
+    ui.print_menu(title, options, 'Exiting back to Main Menu...')
+    user_input = ui.get_single_input("Your choice: ")
+    if user_input == '1':
+        create_student(table)
+    elif user_input == '2':
+        try:
+            id = ui.get_inputs([''], 'ID: ')
+            read_student(table, id)
+        except ValueError:
+            ui.print_error_message("Please enter a valid ID!")
+    elif user_input == '3':
+        pass
+    elif user_input == '4':
+        pass
+    elif user_input == '5':
+        pass
+    elif user_input == '6':
+        pass
+    elif user_input == '7':
+        pass
 def show_table(table):
 
    ui.print_table(table)

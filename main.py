@@ -7,36 +7,31 @@ from position import position
 from application import application
 
 def choose():
-    table = data_manager.get_data_from_file()
     user_input = int(input("Please type a number!\n"))
     if user_input == 1:
-        students.start_module()
+        pass
     elif user_input == 2:
         company.start_module()
     elif user_input == 3:
         pass
     elif user_input == 4:
-        try:
-            id = input("Give me the ID of the student: \n")
-            students.update_student(table, id)
-        except ValueError:
-            ui.print_error_message("Wrong input!")
+        students.start_module()
     elif user_input == 5:
         pass
     elif user_input == 6:
-        try:
-            id = input("Give me the ID of the student: \n")
-            students.delete_student(table, id)
-        except ValueError:
-            ui.print_error_message("Wrong input!")
+        pass
     elif user_input == 0:
         pass # MAIN MENU go back to main menu
     else:
         raise KeyError("There is no such option!")
 
 def handle_menu():
-    
-    ui.print_menu('Main Menu', options)
+    options = ['Application Manager',
+                'Company Manager',
+                'Position Manager',
+                'Students Manager']
+
+    ui.print_menu('Main Menu', options, 'Exit program')
 
 
 def main():
