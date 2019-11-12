@@ -16,7 +16,6 @@ def get_data_from_file(filename="students_data.csv"):
         noslashn.append(line.split(","))
     return noslashn
         
-
 def write_data_to_file(filename="students_data.csv"):
     type_of_data=["Name","Age","Active"]
     lego=get_data_from_file()
@@ -72,5 +71,3 @@ def write_data_to_file(filename="students_data.csv"):
     text.write(",".join(list_of_data))
     text.write("\n")
     text.close()
-    
-write_data_to_file()
