@@ -13,7 +13,8 @@ options = ['Create Student',
                 'Read Students',
                 'Update Student',
                 'Activate/Deactivate Student',
-                'Delete Student']
+                'Delete Student',
+                'Back to Main Menu']
 
 def start_module():
 
