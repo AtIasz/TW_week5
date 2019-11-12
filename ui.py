@@ -1,11 +1,11 @@
-def print_menu(title, options):
+def print_menu(title, options,exit_message):
     print(title)
     
     for i in range(len(options)):
         print('(' + str(i+1) + ')', end='')
         print(options[i])
         
-    print("(0)Exit")
+    print("(0)" + exit_message)
 
 def print_something_else(arg):
     pass

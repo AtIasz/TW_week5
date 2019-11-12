@@ -136,3 +136,18 @@ def update_student(table, id):
 
 
 
+def handle_menu():
+    
+    ui.print_menu('Main Menu', options)
+
+
+def main():
+    while True:
+        handle_menu()
+        try:
+            choose()
+        except KeyError:
+            ui.print_error_message('Wrong input! Please try again!')
+
+
+

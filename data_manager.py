@@ -83,3 +83,10 @@ def write_table_to_file(file_name, table, mode='a'):
         for student in table:
             row = ','.join(student)
             f.write(row + '\n')
+
+def get_table_from_file(file_name):
+    
+    with open(file_name, 'r') as f:
+        lines = f.readlines()
+    table =[element.replace('\n','').split(',') for element in lines]
+    return table

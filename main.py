@@ -1,8 +1,8 @@
 import ui
 import sys
-import students
+from students import students
 import data_manager
-import company
+from company import company
 from position import position
 from application import application
 
@@ -31,7 +31,7 @@ def handle_menu():
                 'Position Manager',
                 'Students Manager']
 
-    ui.print_menu('Main Menu', options, 'Exit program')
+    ui.print_menu('Main Menu', options,"Exit")
 
 
 def main():
