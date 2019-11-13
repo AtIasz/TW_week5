@@ -155,7 +155,7 @@ def update_student(table, id):
 
     return table
 
-
+'''
 def handle_menu():
     
     ui.print_menu('Main Menu', options)
@@ -168,6 +168,6 @@ def main():
             choose()
         except KeyError:
             ui.print_error_message('Wrong input! Please try again!')
-
+'''
 
 
