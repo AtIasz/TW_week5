@@ -26,12 +26,18 @@ def start_module():
         create_student(table)
     elif user_input == '2':
         try:
-            id = ui.get_inputs([''], 'ID: ')
+            id = ui.get_single_input("ID of the student you are looking for:\n")
             read_student(table, id)
         except ValueError:
             ui.print_error_message("Please enter a valid ID!")
     elif user_input == '3':
-        pass
+        how_many = ui.get_single_input('How many student would you like to search?\n')
+        try:
+            for i in range(how_many):
+                id = ui.get_inputs([''], 'ID: ')
+                read_student(table, id)
+        except ValueError:
+            ui.print_error_message("Please enter a valid ID!")
     elif user_input == '4':
         pass
     elif user_input == '5':
@@ -40,9 +46,11 @@ def start_module():
         pass
     elif user_input == '7':
         pass
+
+
 def show_table(table):
 
-   ui.print_table(table)
+    ui.print_table(table)
 
 
 def create_student(table):
@@ -70,8 +78,23 @@ def read_student(table, id):
     ID = 0
     for student in table:
         if student[ID] == id:
+            ui.print_result('Student you were looking for', student)
             return student
     raise ValueError
+
+
+def read_students(table, ids):
+    # ids = list of ids, given by user
+
+    final_list = []
+
+    ID = 0
+    for student in table:
+        for id in ids:
+            if student[ID] == id:
+                final_list.append(student)
+    return final_list
+
 
 def activate_deactivate_student(table, id):
     ID = 0

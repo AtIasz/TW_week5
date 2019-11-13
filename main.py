@@ -6,6 +6,7 @@ from company import company
 from position import position
 from application import application
 
+
 def choose():
     user_input = int(input("Please type a number!\n"))
     if user_input == 1:

@@ -7,6 +7,7 @@ def print_menu(title, options,exit_message):
     print('(0) ' + exit_message)
 
 
+
 def print_something_else(arg):
     pass
 
@@ -37,3 +38,10 @@ def print_table(table, title_list):
 
 
     pass
+
+
+def print_result(message, result):
+
+    print()
+    print(f'{message} = {result}')
+    
