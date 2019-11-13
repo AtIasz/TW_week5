@@ -10,11 +10,11 @@ from application import application
 def choose():
     user_input = ui.get_single_input("Please type a number!\n")
     if user_input == '1':
-        pass
+        application.start_module()
     elif user_input == '2':
         company.start_module()
     elif user_input == '3':
-        pass
+        position.start_module()
     elif user_input == '4':
         students.start_module()
     elif user_input == '0':
