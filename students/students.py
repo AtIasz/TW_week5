@@ -1,6 +1,7 @@
 import common
 import ui
 import data_manager
+import main
 
 title = '\nStudents'
 
@@ -31,21 +32,33 @@ def start_module():
         except ValueError:
             ui.print_error_message("Please enter a valid ID!")
     elif user_input == '3':
-        how_many = ui.get_single_input('How many student would you like to search?\n')
         try:
-            for i in range(how_many):
-                id = ui.get_inputs([''], 'ID: ')
-                read_student(table, id)
+            user_input = ui.get_single_input('How many student would you like to search?\n')
+            how_many = int(user_input)
+            ids = ui.get_inputs(how_many*['ID: '], 'Students ids')
+            read_students(table, ids)
         except ValueError:
             ui.print_error_message("Please enter a valid ID!")
     elif user_input == '4':
-        pass
+        try:
+            id = ui.get_single_input("ID of the student you are looking for:\n")
+            update_student(table, id)
+        except ValueError:
+            ui.print_error_message("Please enter a valid ID!")
     elif user_input == '5':
-        pass
+        try:
+            id = ui.get_single_input("ID of the student you are looking for:\n")
+            activate_deactivate_student(table, id)
+        except ValueError:
+            ui.print_error_message("Please enter a valid ID!")
     elif user_input == '6':
-        pass
+        try:
+            id = ui.get_single_input("ID of the student you are looking for:\n")
+            delete_student(table, id)
+        except ValueError:
+            ui.print_error_message("Please enter a valid ID!")
     elif user_input == '7':
-        pass
+        main.main()
 
 
 def show_table(table):
@@ -59,8 +72,6 @@ def create_student(table):
         “active” determines if the student is active or not (shows up in listings). 
         IDs are unique among students.
     '''
-
-
     ID = common.generate_random(table)
     user_input = ui.get_inputs(list_labels, title)
     user_input.insert(0, ID)
@@ -93,6 +104,7 @@ def read_students(table, ids):
         for id in ids:
             if student[ID] == id:
                 final_list.append(student)
+    ui.print_result('Students you were looking for', final_list)
     return final_list
 
 
@@ -113,26 +125,13 @@ def activate_deactivate_student(table, id):
     return table
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def delete_student(table, id):
     about_to_be_deleted = None
     ID = 0
     for row in table:
         if row[ID] == id:
             about_to_be_deleted = row
+            break
     if about_to_be_deleted is None:
         ui.print_error_message("Wrong input! Please try again!")
     else:
@@ -155,8 +154,6 @@ def update_student(table, id):
     table = data_manager.write_table_to_file(table)
 
     return table
-
-
 
 
 def handle_menu():
