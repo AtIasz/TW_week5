@@ -18,7 +18,7 @@ def choose():
     elif user_input == '4':
         students.start_module()
     elif user_input == '0':
-        pass # MAIN MENU go back to main menu
+        sys.exit()
     else:
         raise KeyError("There is no such option!")
 
