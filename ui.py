@@ -12,7 +12,7 @@ def print_something_else(arg):
 
 def get_inputs():
     data_in=input()
-
+    return data_in
 def print_error_message(message):
     print(message)
 
