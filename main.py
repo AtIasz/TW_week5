@@ -6,21 +6,18 @@ from company import company
 from position import position
 from application import application
 
+
 def choose():
-    user_input = int(input("Please type a number!\n"))
-    if user_input == 1:
+    user_input = ui.get_single_input("Please type a number!\n")
+    if user_input == '1':
         pass
-    elif user_input == 2:
+    elif user_input == '2':
         company.start_module()
-    elif user_input == 3:
+    elif user_input == '3':
         pass
-    elif user_input == 4:
+    elif user_input == '4':
         students.start_module()
-    elif user_input == 5:
-        pass
-    elif user_input == 6:
-        pass
-    elif user_input == 0:
+    elif user_input == '0':
         pass # MAIN MENU go back to main menu
     else:
         raise KeyError("There is no such option!")
@@ -31,7 +28,7 @@ def handle_menu():
                 'Position Manager',
                 'Students Manager']
 
-    ui.print_menu('Main Menu', options,"Exit")
+    ui.print_menu('Main Menu', options, "Exit")
 
 
 def main():
