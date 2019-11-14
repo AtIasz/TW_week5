@@ -17,6 +17,7 @@ def get_data_from_file(filename="students/students_data.csv"):
         noslashn.append(line.split(","))
     return noslashn
 def ID_gen():
+    table=get_data_from_file(filename="company/company_data.csv")
     generated = ''
 
     up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
@@ -50,10 +51,7 @@ def ID_gen():
                 generated += l
                 
             w.remove(w[0])
-        if generated not in table:
-            break
-        else:
-            continue
+        
     return generated 
  
 def write_data_to_file(filename="students/students_data.csv"):

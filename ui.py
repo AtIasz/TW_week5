@@ -8,8 +8,9 @@ def print_menu(title, options,exit_message):
 
 
 
-def print_something_else(arg):
+def print_something(arg):
     pass
+    print(arg)
 
 def get_inputs():
     data_in=input()

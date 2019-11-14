@@ -17,6 +17,9 @@ def choose():
         position.start_module()
     elif user_input == '4':
         students.start_module()
+    #elif user_input == '5':
+    #    gen()
+
     elif user_input == '0':
         sys.exit()
     else:
@@ -38,6 +41,15 @@ def main():
             choose()
         except KeyError:
             ui.print_error_message('Wrong input! Please try again!')
+def gen():
+    lmao=[]
+    for i in range(10):
+        eksz=data_manager.ID_gen()
+        lmao.append(eksz)
+    with open("company/company_data.csv","a") as f:
+            for i in range(len(lmao)):
+                f.write(lmao[i]+"\n")
+             
 
 
 
