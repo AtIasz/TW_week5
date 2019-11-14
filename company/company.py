@@ -73,6 +73,7 @@ def read_companies():
     return list_of_companies
     
 
+ 
 def update_company(ID):
     """
     Users can update the details of existing companies by first entering their ID and then the information (name) to be updated.
