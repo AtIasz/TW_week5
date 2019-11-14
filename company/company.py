@@ -30,10 +30,10 @@ def choose():
     elif ch == "3":
         read_companies(list_of_companies)
     elif ch == "4":
-        x=input("Give me an ID I could work with")
+        x=input("Give me an ID I could work with: ")
         update_company(x)
     elif ch == "5":
-        x=input("Give me an ID I could work with")
+        x=input("Give me an ID I could work with: ")
         delete_company(x)
     
         
