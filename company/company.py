@@ -26,15 +26,15 @@ def choose():
     if ch=="1":
         create_company(list_of_companies)
     elif ch == "2":
-        x=input("Give me an ID I could work with: ")
+        x=input("Give me an ID I can work with: ")
         ui.print_something(read_company(x))
     elif ch == "3":
         ui.print_something(read_companies())
     elif ch == "4":
-        x=input("Give me an ID I could work with: ")
+        x=input("Give me an ID I can work with: ")
         update_company(x)
     elif ch == "5":
-        x=input("Give me an ID I could work with: ")
+        x=input("Give me an ID I can work with: ")
         delete_company(x)
     
         
