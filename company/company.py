@@ -34,15 +34,15 @@ def create_company(list_of_data):
 def choose():
     ch=input("Give me a number: ")
     list_of_companies=data_manager.get_data_from_file(filename="company/company_data.csv")
-    if ch=="1":
+    if ch == "1":
         create_company(list_of_companies)
-    elif ch=="2":
+    elif ch == "2":
         ui.print_something(read_company("SALALALA"))
-    elif ch=="3":
+    elif ch == "3":
         read_companies(list_of_companies)
-    elif ch=="4":
+    elif ch == "4":
         update_company()
-    elif ch=="5":
+    elif ch == "5":
         delete_company()
     
         
@@ -57,7 +57,7 @@ def read_company(ID):
     pass
     list_of_company_positions= data_manager.get_data_from_file(filename="position/position_data.csv")
     for i in range(len(list_of_company_positions)):
-        
+    
 
 
 
@@ -66,7 +66,7 @@ def read_companies(list_of_companies):
     Users can list the IDs and names of all companies in the system.
     
     """
-    list_of_companies_data=data_manager.get_data_from_file(filename="company/company_data.csv")
+    list_of_companies_data = data_manager.get_data_from_file(filename="company/company_data.csv")
     
     ui.print_something(list_of_companies)
     pass
@@ -78,9 +78,9 @@ def update_company(ID):
     Company names can be updated, but they should stay unique.
 
     """
-    list_of_companies=data_manager.get_data_from_file(filename="position/position.csv")
+    list_of_companies = data_manager.get_data_from_file(filename="position/position.csv")
     for i in range(len(list_of_companies)):
-        if list_of_companies[i][0]==ID:
+        if list_of_companies[i][0] == ID:
             pass
 def delete_company():
     pass
