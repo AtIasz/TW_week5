@@ -5,9 +5,9 @@ import main
 
 title = '\nApplication'
 
-list_labels = ['Description: ',
-                'Number of Seats: ',
-                'Company ID: ']
+list_labels = ['Field: ',
+                'Student ID: ',
+                'Position ID: ']
 
 options = ['Create Application',
                 'Update Application',
