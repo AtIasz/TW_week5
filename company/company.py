@@ -47,7 +47,12 @@ def create_company(list_of_data):
     user_input = ui.get_inputs(list_labels, title)
     user_input.insert(0, ID)
     list_of_data.append(user_input)
-    return list_of_data
+    with open("company/company_data.csv","w") as f:
+            for i in range(len(list_of_data)):
+                row = ','.join(list_of_data[i])
+                f.write(row + '\n')
+    
+    
         
         
 def read_company(ID):
