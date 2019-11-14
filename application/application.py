@@ -54,8 +54,8 @@ def create_Application(table):
     user_input.insert(0, ID)
 
     table.append(user_input)
-
-    return table
+    new_table = data_manager.write_table_to_file('application_data.csv', table)
+    return new_table
 
 
 def delete_Application(table, id):

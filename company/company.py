@@ -44,22 +44,18 @@ def choose():
         update_company()
     elif ch=="5":
         delete_company()
-    
-        
-        
-        
+
+
 def read_company(ID):
     """
     Users can show the details of existing companies by entering their ID.
     All “Position” of a company shows up here.
 
     """
-    pass
+    
     list_of_company_positions= data_manager.get_data_from_file(filename="position/position_data.csv")
     for i in range(len(list_of_company_positions)):
-        
-
-
+        pass
 
 def read_companies(list_of_companies):
     """ 
@@ -69,8 +65,9 @@ def read_companies(list_of_companies):
     list_of_companies_data=data_manager.get_data_from_file(filename="company/company_data.csv")
     
     ui.print_something(list_of_companies)
-    pass
+    
 
+ 
 def update_company(ID):
     """
     Users can update the details of existing companies by first entering their ID and then the information (name) to be updated.
