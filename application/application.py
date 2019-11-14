@@ -15,6 +15,7 @@ options = ['Create Application',
                 'Back to Main Menu']
 table = data_manager.get_table_from_file('application/application_data.csv')
 
+exit_message = 'Exiting back to Main Menu...'
 
 def start_module():
 
