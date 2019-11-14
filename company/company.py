@@ -26,9 +26,10 @@ def choose():
     if ch=="1":
         create_company(list_of_companies)
     elif ch == "2":
-        ui.print_something(read_company())
+        x=input("Give me an ID I could work with: ")
+        ui.print_something(read_company(x))
     elif ch == "3":
-        read_companies(list_of_companies)
+        ui.print_something(read_companies())
     elif ch == "4":
         x=input("Give me an ID I could work with: ")
         update_company(x)
@@ -74,7 +75,7 @@ def read_companies():
     Users can list the IDs and names of all companies in the system.
     
     """
-    list_of_companies_data = data_manager.get_data_from_file(filename="company/company_data.csv")
+    list_of_companies = data_manager.get_data_from_file(filename="company/company_data.csv")
     return list_of_companies
     
 
