@@ -86,33 +86,4 @@ def update_Application(table, id):
 
     table = data_manager.write_table_to_file(table)
 
-<<<<<<< HEAD
     ui.print_menu(title, options, exit_message)
-
-def create_application():
-    """
-    Create “Application”
-    Users can create new applications. An application has an ID, an “accepted” field, a “Student ID” and a “Position ID”.
-    IDs are unique amongst other applications.
-    Student and Position IDs must exist.
-    The “accepted” field stores whether the application was accepted by a company or not.
-
-    """    
-    pass
-def update_application():
-    """
-    Update “Application”
-    Users can update existing applications by entering their ID.
-    Only the “accepted” status can be changed.
-    
-    """
-    pass
-def delete_application():
-    """
-    Delete “Application”
-    Users can delete existing applications by entering their IDs.
-    """
-    pass
-=======
-    return table
->>>>>>> 57876504edb59bbe6c123416f5f99de183313d21

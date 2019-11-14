@@ -33,8 +33,13 @@ def create_company(list_of_data):
 
 def choose():
     ch=input("Give me a number: ")
+<<<<<<< HEAD
     list_of_companies=data_manager.get_data_from_file(filename="company/company_data.csv")
     if ch == "1":
+=======
+    list_of_companies = data_manager.get_data_from_file(filename="company/company_data.csv")
+    if ch=="1":
+>>>>>>> 65d8add016f3059dec1bf880b8539f93233a23ad
         create_company(list_of_companies)
     elif ch == "2":
         ui.print_something(read_company("SALALALA"))
