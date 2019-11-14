@@ -25,6 +25,7 @@ def choose():
     else:
         raise KeyError("There is no such option!")
 
+
 def handle_menu():
     options = ['Application Manager',
                 'Company Manager',
