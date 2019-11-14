@@ -19,6 +19,24 @@ def start_module():
             print(e)
     
 
+
+def choose():
+    ch=input("Give me a number: ")
+    list_of_companies = data_manager.get_data_from_file(filename="company/company_data.csv")
+    if ch=="1":
+        create_company(list_of_companies)
+    elif ch == "2":
+        ui.print_something(read_company())
+    elif ch == "3":
+        read_companies(list_of_companies)
+    elif ch == "4":
+        x=input("Give me an ID I could work with")
+        update_company(x)
+    elif ch == "5":
+        x=input("Give me an ID I could work with")
+        delete_company(x)
+    
+        
 def create_company(list_of_data):
     """
     Users can create new companies. Companies have an ID, name.
@@ -30,27 +48,6 @@ def create_company(list_of_data):
     user_input.insert(0, ID)
     list_of_data.append(user_input)
     return list_of_data
-
-def choose():
-    ch=input("Give me a number: ")
-<<<<<<< HEAD
-    list_of_companies=data_manager.get_data_from_file(filename="company/company_data.csv")
-    if ch == "1":
-=======
-    list_of_companies = data_manager.get_data_from_file(filename="company/company_data.csv")
-    if ch=="1":
->>>>>>> 65d8add016f3059dec1bf880b8539f93233a23ad
-        create_company(list_of_companies)
-    elif ch == "2":
-        ui.print_something(read_company("SALALALA"))
-    elif ch == "3":
-        read_companies(list_of_companies)
-    elif ch == "4":
-        update_company()
-    elif ch == "5":
-        delete_company()
-    
-        
         
         
 def read_company(ID):
@@ -60,21 +57,21 @@ def read_company(ID):
 
     """
     pass
-    list_of_company_positions= data_manager.get_data_from_file(filename="position/position_data.csv")
+    return_list=[]
+    list_of_company_positions = data_manager.get_data_from_file(filename = "position/position_data.csv")
     for i in range(len(list_of_company_positions)):
-    
+        if list_of_company_positions[i][-1] == ID:
+            return_list.append(list_of_company_positions[i])
+    return return_list
 
-
-
-def read_companies(list_of_companies):
+def read_companies():
     """ 
     Users can list the IDs and names of all companies in the system.
     
     """
     list_of_companies_data = data_manager.get_data_from_file(filename="company/company_data.csv")
+    return list_of_companies
     
-    ui.print_something(list_of_companies)
-    pass
 
 def update_company(ID):
     """
@@ -83,17 +80,53 @@ def update_company(ID):
     Company names can be updated, but they should stay unique.
 
     """
-    list_of_companies = data_manager.get_data_from_file(filename="position/position.csv")
+    list_of_companies = data_manager.get_data_from_file(filename="company/company_data.csv")
+    exist = False
+    return_list=[]
+    place_of_new_name = 0
     for i in range(len(list_of_companies)):
-        if list_of_companies[i][0] == ID:
-            pass
-def delete_company():
+        if ID == list_of_companies[i][0]:
+            exist = True
+            place_of_new_name = i
+    if exist != True:
+        return "No company is in the database with such ID"
+    else:
+        x = input("Give me this specific ID a new company name:")
+        tmp=[]
+        tmp.append(list_of_companies[place_of_new_name][0])
+        tmp.append(x)
+        for i in range(len(list_of_companies)):
+            if i == place_of_new_name:
+                return_list.append(tmp)
+            else:
+                return_list.append(list_of_companies[i])
+        with open("company/company_data.csv","w") as f:
+            for i in range(len(return_list)):
+                row = ','.join(return_list[i])
+                f.write(row + '\n')
+
+def delete_company(ID):
     pass
     """
     Users can delete existing companies by entering their ID.
     Companies cannot be deleted if they have an existing “Position”.
     """
+    list_of_companies = data_manager.get_data_from_file(filename="company/company_data.csv")
+    list_of_company_positions = data_manager.get_data_from_file(filename = "position/position_data.csv")
+
+    theres = False
+    for i in range(len(list_of_company_positions)):
+        if list_of_company_positions[i][-1] == ID:
+            return "This company has positions, so it can't be deleted."       
+    return_list = []
+    for i in range(len(list_of_companies)):
+        if list_of_companies[i][0] != ID:
+            return_list.append(list_of_companies[i])
     
+    with open("company/company_data.csv", "w") as f:
+        for i in range(len(return_list)):
+            row = ','.join(return_list[i])
+            f.write(row + '\n')            
 
 def handle_menu():
     pass
