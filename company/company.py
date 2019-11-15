@@ -2,6 +2,7 @@ import common
 import data_manager
 import ui
 import position
+import main
 
 title = 'Company'
 list_labels = ['Company name: ']
@@ -36,7 +37,8 @@ def choose():
     elif ch == "5":
         x=input("Give me an ID I can work with: ")
         delete_company(x)
-    
+    elif ch == '0':
+        main.main()
         
 def create_company(list_of_data):
     """

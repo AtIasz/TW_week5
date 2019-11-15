@@ -54,7 +54,7 @@ class CompanyTester(unittest.TestCase):
 
     def test_delete_company(self):
         table = data_manager.get_table_from_file('company/test_company_data.csv')
-        expected = data_manager.get_table_from_file('students/test2_company_data.csv')
+        expected = data_manager.get_table_from_file('company/test2_company_data.csv')
         result = students.delete_student(table, '6Hy#4dL1')
         compare_lists(self, expected, result)
 
