@@ -15,8 +15,8 @@ def start_module():
         handle_menu()
         try:
             choose()
-        except ValueError as e:
-            print(e)
+        except ValueError:
+            ui.print_error_message("Please choose a valid option!")
     
 
 
